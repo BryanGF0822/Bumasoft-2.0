@@ -1373,10 +1373,10 @@ public class ResidentUnitGUI {
     @FXML
     void loadTestData(ActionEvent event) throws IOException {
 
-        nameUnit.setText("rattan");
-        nitUnit.setText("1122121");
+        nameUnit.setText("Rattan");
+        nitUnit.setText("1151970");
         directionUnit.setText("Carrera 8");
-        telephoneUnit.setText("3178981819");
+        telephoneUnit.setText("3015079361");
         parkingAvailable.setText("4");
         quantityApartments.setText("2");
         quantityTowers.setText("2");

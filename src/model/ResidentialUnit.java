@@ -70,7 +70,7 @@ public class ResidentialUnit {
 
     @SuppressWarnings("unchecked")
     public void loadDataApartments() throws Exception {
-
+    	System.out.println("HAHAHAHAHAHAHAHHA");
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/dats/apartments.dat"));
         ArrayList<Apartments> temp;
 

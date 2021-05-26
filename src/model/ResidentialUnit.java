@@ -8,6 +8,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+
+import data_structures.WeightedGraph.Graph;
 
 public class ResidentialUnit {
     private String nameUnit;
@@ -28,6 +31,8 @@ public class ResidentialUnit {
     private Employee root;
     static BufferedWriter bw;
     private DefaultingAdministration rootDefaultingAdministration;
+    public Graph<Tower> gt;
+    public HashMap<Character, Tower> auxTw;
 
     public ResidentialUnit(String nameUnit, String nitUnit, String directionUnit, String telephoneUnit, int quantityApartments, int quantityTowers, int quantityFloorTowers, int quantityApartmentsFloor, int parkingAvailable) throws FileNotFoundException {
         this.nameUnit = nameUnit;
@@ -47,6 +52,9 @@ public class ResidentialUnit {
         firstResident = null;
         root = null;
         rootDefaultingAdministration = null;
+        gt = new Graph<Tower>();
+        auxTw = new HashMap<>();
+        
     }
 
     public DefaultingAdministration getRootDefaultingAdministration() {

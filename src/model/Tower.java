@@ -7,15 +7,13 @@ import java.util.List;
 public class Tower implements Serializable {
 	
 	private String name;
-	private int numPisos;
 	
-	private List<Apartments> apartmets;
+	private List<List<Apartments>> pisos;
 
-	public Tower(String name, int numPisos) {
+	public Tower(String name) {
 		this.name = name;
-		this.numPisos = numPisos;
 		
-		apartmets = new ArrayList<>();
+		pisos = new ArrayList<>();
 	}
 
 	public String getName() {
@@ -26,20 +24,12 @@ public class Tower implements Serializable {
 		this.name = name;
 	}
 
-	public int getNumPisos() {
-		return numPisos;
-	}
-
-	public void setNumPisos(int numPisos) {
-		this.numPisos = numPisos;
-	}
-
-	public List<Apartments> getApartmets() {
-		return apartmets;
+	public List<List<Apartments>> getApartmets() {
+		return pisos;
 	}
 
 	public void setApartmets(List<Apartments> apartmets) {
-		this.apartmets = apartmets;
+		this.pisos = pisos;
 	}
 	
 	

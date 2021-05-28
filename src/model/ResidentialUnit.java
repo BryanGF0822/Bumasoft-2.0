@@ -72,9 +72,9 @@ public class ResidentialUnit {
             while (myReader.hasNextLine()) {
                 dato = myReader.nextLine();
                 info = dato.split(";");
-                
-                for (int i = 1; i < list.length-1; i++) {
-                    myMatrix[row][i] = Integer.parseInt(info[i]);
+                System.out.println("Tamaño info: " + info.length);
+                for (int i = 1; i < list.length; i++) {
+                    myMatrix[row][i-1] = Integer.parseInt(info[i]);
                 }
                 row++;               
             }
@@ -89,9 +89,7 @@ public class ResidentialUnit {
         } catch (FileNotFoundException ex) {
              System.out.println("El archivo no existe");
         }
-
-      
-     }
+    }
 
     public DefaultingAdministration getRootDefaultingAdministration() {
         return rootDefaultingAdministration;

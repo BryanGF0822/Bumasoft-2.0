@@ -21,6 +21,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Optional;
 
+@SuppressWarnings("restriction")
 public class  Main extends Application{
     private ResidentUnitGUI ru;
     private ResidentialUnit residentialUnit;

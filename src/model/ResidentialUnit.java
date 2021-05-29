@@ -76,13 +76,15 @@ public class ResidentialUnit implements Serializable{
             for (int i = 1; i < list.length - 1; i++) {
             	Node<?> temp;
                 String towerIndex = "t" + (i -1);
+                String parkingIndex = "p" + (i -5);
             	if(i == 1)
-            		// temp = new Node<Reception>(new Reception(), "RECEPTION");
+            		temp = new Node<Reception>(new Reception(), "RECEPTION");
             	 if(i > 1 && i<6)
     				 temp = new Node<Tower>(new Tower(towerIndex ), "TOWER");
             	else {
-    				//temp = new Node<Parking>(new Parking(), "PARKING");
+    				temp = new Node<Parking>(new Parking(parkingIndex), "PARKING");
 			}
+            	 generalGraph.addNode(temp, temp.getType());
             }
             while (myReader.hasNextLine()) {
                 dato = myReader.nextLine();

@@ -18,6 +18,7 @@ import thread.LocalDateThread;
 import java.io.*;
 import java.time.LocalDateTime;
 
+@SuppressWarnings("restriction")
 public class ResidentUnitGUI {
 
     static BufferedWriter bw;

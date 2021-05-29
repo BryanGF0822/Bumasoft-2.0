@@ -11,9 +11,10 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import data_structures.WeightedGraph.Graph;
 
-public class ResidentialUnit {
+import data_structures.WeightedGraph.*;
+
+public class ResidentialUnit implements Serializable{
     private String nameUnit;
     private String nitUnit;
     private String directionUnit;
@@ -33,7 +34,7 @@ public class ResidentialUnit {
     static BufferedWriter bw;
     private DefaultingAdministration rootDefaultingAdministration;
     public Graph<Tower> gt;
-    public HashMap<Character, Tower> auxTw;
+    public HashMap<String, Tower> auxTw;
 
     public ResidentialUnit(String nameUnit, String nitUnit, String directionUnit, String telephoneUnit, int quantityApartments, int quantityTowers, int quantityFloorTowers, int quantityApartmentsFloor, int parkingAvailable) throws FileNotFoundException {
         this.nameUnit = nameUnit;
@@ -54,17 +55,18 @@ public class ResidentialUnit {
         root = null;
         rootDefaultingAdministration = null;
         gt = new Graph<Tower>();
-        auxTw = new HashMap<>();
+        auxTw = new HashMap<String, Tower>();
         
     }
     
-    public static void leerArchivo(String ruta) {
+    public int[][] leerArchivo(String ruta) {
 
      	String dato;
      	
         try {
             File archivo = new File(ruta);
-            Scanner myReader = new Scanner(archivo);
+            @SuppressWarnings("resource")
+			Scanner myReader = new Scanner(archivo);
             String[] list = myReader.nextLine().split(";");
             int[][] myMatrix = new int[list.length-1][list.length-1];
             int row = 0;
@@ -75,6 +77,8 @@ public class ResidentialUnit {
                 System.out.println("Tamaño info: " + info.length);
                 for (int i = 1; i < list.length; i++) {
                     myMatrix[row][i-1] = Integer.parseInt(info[i]);
+                    gt.addNode(null);
+                    
                 }
                 row++;               
             }
@@ -86,9 +90,12 @@ public class ResidentialUnit {
                 System.out.println(""); 
             }
             
+            return myMatrix;
+            
         } catch (FileNotFoundException ex) {
              System.out.println("El archivo no existe");
         }
+		return null;
     }
 
     public DefaultingAdministration getRootDefaultingAdministration() {

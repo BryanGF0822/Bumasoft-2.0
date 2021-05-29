@@ -78,8 +78,4 @@ public class Apartments implements Serializable   {
         this.residentType = residentType;
     }
 
-
-
-
-
 }

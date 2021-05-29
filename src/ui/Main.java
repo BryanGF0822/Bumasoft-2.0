@@ -103,7 +103,7 @@ public class  Main extends Application{
         progressBarThread.start();
         alert.getDialogPane().getChildren().clear();
 
-        FXMLLoader prueba = new FXMLLoader(getClass().getResource("welcome.fxml"));
+        FXMLLoader prueba = new FXMLLoader(getClass().getResource("fxml/welcome.fxml"));
         prueba.setController(this);
         Parent test = prueba.load();
         alert.getDialogPane().setPrefHeight(300);
@@ -112,7 +112,7 @@ public class  Main extends Application{
 
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("residentialUnitInformation.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/residentialUnitInformation.fxml"));
 
         fxmlLoader.setController(ru);
 

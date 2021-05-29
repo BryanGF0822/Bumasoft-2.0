@@ -44,7 +44,7 @@ public class ResidentUnitGUI {
     @FXML
     void registerData(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -52,24 +52,32 @@ public class ResidentUnitGUI {
         mainPanel.getChildren().add(menu);
 
     }
-
-    //se devuelve al menu principal
-    @FXML
-    void cancel(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+// metodo nuevo
+    public void menuBack() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
+    }
 
+    //se devuelve al menu principal
+    @FXML
+    void cancel(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
+        fxmlLoader.setController(this);
+        Parent menu = fxmlLoader.load();
+
+        mainPanel.getChildren().clear();
+        mainPanel.getChildren().add(menu);
     }
 
     //--Submenu Actualizar------------------------------------------------------------------------------------------
 
     @FXML
     void update(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("updateData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/updateData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -110,7 +118,7 @@ public class ResidentUnitGUI {
     @FXML
     void backPlatform(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("residentialUnitInformation.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/residentialUnitInformation.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -152,7 +160,7 @@ public class ResidentUnitGUI {
     void saveAll(ActionEvent event) throws IOException {
         addResidentialUnit();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent addContactPane = fxmlLoader.load();
 
@@ -164,13 +172,12 @@ public class ResidentUnitGUI {
     //Boton Atras
     @FXML
     void exit(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     //--Apartamentos------------------------------------------------------------------------------------------
@@ -203,7 +210,7 @@ public class ResidentUnitGUI {
     //iniciar la opcion de registrar apto
     @FXML
     void registersApartments(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerApartment.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerApartment.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -231,7 +238,7 @@ public class ResidentUnitGUI {
                     alert.setContentText("El Apartamento ya existe");
                     alert.showAndWait();
 
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerApartment.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerApartment.fxml"));
                     fxmlLoader.setController(this);
                     Parent menu = fxmlLoader.load();
 
@@ -263,7 +270,7 @@ public class ResidentUnitGUI {
     @FXML
     void saveAptDataRegister(ActionEvent event) throws IOException, RealStateRegistrationDuplicate {
         addApartments();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -273,7 +280,7 @@ public class ResidentUnitGUI {
 
     @FXML
     void backRegisterAptData(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -301,7 +308,7 @@ public class ResidentUnitGUI {
     //Registros
 
     public void RegisterOwners(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerOwner.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerOwner.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -336,7 +343,7 @@ public class ResidentUnitGUI {
     void saveRegisterDataOwner(ActionEvent event) throws IOException, TypeDocumentException {
 
         addOwners();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -348,7 +355,7 @@ public class ResidentUnitGUI {
     @FXML
     void backOwner(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -362,7 +369,7 @@ public class ResidentUnitGUI {
     @FXML
     void UpdateOwner(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("idOwnerUpdate.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/idOwnerUpdate.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -388,24 +395,22 @@ public class ResidentUnitGUI {
 
     @FXML
     void cancelOwnerUpdate(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     @FXML
     void returnMenuUpdate(ActionEvent event) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     @FXML
@@ -430,7 +435,7 @@ public class ResidentUnitGUI {
 
         alert.showAndWait();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("updateData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/updateData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -445,7 +450,7 @@ public class ResidentUnitGUI {
     @FXML
     void ownerUpdate(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("updateDataOwner.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/updateDataOwner.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -494,26 +499,12 @@ public class ResidentUnitGUI {
 
     @FXML
     void cancelApartmentUpdate(ActionEvent event) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
-        fxmlLoader.setController(this);
-        Parent menu = fxmlLoader.load();
-
-        mainPanel.getChildren().clear();
-        mainPanel.getChildren().add(menu);
-
+        menuBack();
     }
 
     @FXML
     void returnMenuApartmentUpdate(ActionEvent event) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
-        fxmlLoader.setController(this);
-        Parent menu = fxmlLoader.load();
-
-        mainPanel.getChildren().clear();
-        mainPanel.getChildren().add(menu);
-
+        menuBack();
     }
 
     @FXML
@@ -541,7 +532,7 @@ public class ResidentUnitGUI {
 
         alert.showAndWait();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("updateData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/updateData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -560,7 +551,7 @@ public class ResidentUnitGUI {
     @FXML
     void apartmentUpdate(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("updateDataApartment.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/updateDataApartment.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -590,19 +581,18 @@ public class ResidentUnitGUI {
     //--------------------------------------------------------------------------------------------
     @FXML
     void backUpdateData(ActionEvent event) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     //--------------------------------------------------------------------------------------------
     @FXML
     void updateApartment(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("idApartmentUpdate.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/idApartmentUpdate.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -661,7 +651,7 @@ public class ResidentUnitGUI {
 
     @FXML
     void RegistersLessee(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerTenants.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerTenants.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -688,7 +678,7 @@ public class ResidentUnitGUI {
     @FXML
     void saveDataLessee(ActionEvent event) throws IOException {
         addTenant();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -698,7 +688,7 @@ public class ResidentUnitGUI {
 
     @FXML
     void backSubmenuLessee(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -734,7 +724,7 @@ public class ResidentUnitGUI {
     @FXML
     void RegisterVehicle(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerVehicle.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerVehicle.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -780,7 +770,7 @@ public class ResidentUnitGUI {
                 alert.setContentText("Debe especificar si es CARRO o MOTO");
                 alert.showAndWait();
 
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerVehicle.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerVehicle.fxml"));
                 fxmlLoader.setController(this);
                 Parent menu = fxmlLoader.load();
 
@@ -805,7 +795,7 @@ public class ResidentUnitGUI {
     void saveVehicleData(ActionEvent event) throws IOException, PlateNullException {
 
         addVehicles();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -817,7 +807,7 @@ public class ResidentUnitGUI {
     @FXML
     void backVehicle(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -849,7 +839,7 @@ public class ResidentUnitGUI {
     @FXML
     void RegisterVisitor(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerVisitor.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerVisitor.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -874,7 +864,7 @@ public class ResidentUnitGUI {
     @FXML
     void saveRegisterVisitor(ActionEvent event) throws IOException {
         addVisitors();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -885,7 +875,7 @@ public class ResidentUnitGUI {
 
     @FXML
     void backVisitor(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
 
@@ -898,7 +888,7 @@ public class ResidentUnitGUI {
     @FXML
     void search(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -908,9 +898,10 @@ public class ResidentUnitGUI {
 
     @FXML
     void backMenuSearch(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
     }
@@ -925,7 +916,7 @@ public class ResidentUnitGUI {
     @FXML
     void searchApartment(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchApartmentData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchApartmentData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -945,7 +936,7 @@ public class ResidentUnitGUI {
     @FXML
     void backSubmenuSearch(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -978,7 +969,7 @@ public class ResidentUnitGUI {
     @FXML
     void searchOwner(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchOwnerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchOwnerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -990,7 +981,7 @@ public class ResidentUnitGUI {
     @FXML
     void buttonSearchOwner(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("showOwners.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/showOwners.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1000,7 +991,7 @@ public class ResidentUnitGUI {
 
     @FXML
     void backShowOwner(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchOwnerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchOwnerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1030,7 +1021,7 @@ public class ResidentUnitGUI {
     @FXML
     void backSubmenuSearchOwner(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1045,7 +1036,7 @@ public class ResidentUnitGUI {
 
     @FXML
     void searchTenant(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchTenantData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchTenantData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1055,7 +1046,7 @@ public class ResidentUnitGUI {
     @FXML
     void backSubmenuTenant(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1070,7 +1061,7 @@ public class ResidentUnitGUI {
 
     @FXML
     void searchVehicle(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchVehicleData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchVehicleData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1080,7 +1071,7 @@ public class ResidentUnitGUI {
     @FXML
     void searchLicensePlate(ActionEvent event) throws IOException {
         //colocar el fxml donde se va a mostrar el vehiculo encontrado
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchTenantData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchTenantData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1091,7 +1082,7 @@ public class ResidentUnitGUI {
     @FXML
     void backSearchVehicle(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("searchData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/searchData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1103,7 +1094,7 @@ public class ResidentUnitGUI {
     @FXML
     void chekParkingSpace(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("consultParking.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/consultParking.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1114,23 +1105,22 @@ public class ResidentUnitGUI {
     @FXML
     void ButtonConsultParking(ActionEvent event) throws IOException {
         //Cambiarle el fxml
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     @FXML
     void backConsultParking(ActionEvent event) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
     //--Entrada y salidad de vehiculos------------------------------------------------------------------------------------------
 
@@ -1140,7 +1130,7 @@ public class ResidentUnitGUI {
     @FXML
     void entryAndExitOfVehicles(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("inAndOutVehicle.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/inAndOutVehicle.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1151,44 +1141,44 @@ public class ResidentUnitGUI {
     @FXML
     void SaveVehicleParking(ActionEvent event) throws IOException {
         //cambiar el txt
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     @FXML
     void inVehicleParking(ActionEvent event) throws IOException {
         //cambiar el txt
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     @FXML
     void outVehicleParking(ActionEvent event) throws IOException {
         //cambiar el txt
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
     }
 
     @FXML
     void backVehicleParking(ActionEvent event) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     //--Submenu Exportar datos------------------------------------------------------------------------------------------
@@ -1196,7 +1186,7 @@ public class ResidentUnitGUI {
     @FXML
     void exportDara(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("exportData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/exportData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1206,17 +1196,17 @@ public class ResidentUnitGUI {
 
     @FXML
     void backExportData(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     @FXML
     void subMenuRegisters(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("exportData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/exportData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1226,7 +1216,7 @@ public class ResidentUnitGUI {
 
     @FXML
     void subMenuSearch(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("exportData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/exportData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1239,7 +1229,7 @@ public class ResidentUnitGUI {
     @FXML
     void importedData(ActionEvent event) throws IOException {
         //cambiar archivos txt
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("importData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/importData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1249,7 +1239,7 @@ public class ResidentUnitGUI {
     @FXML
     void importDataApartments(ActionEvent event) throws IOException {
         //cambiar archivos txt
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("importData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/importData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1260,7 +1250,7 @@ public class ResidentUnitGUI {
     @FXML
     void importDataResidents(ActionEvent event) throws IOException {
         //cambiar archivos txt
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("importData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/importData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1269,13 +1259,12 @@ public class ResidentUnitGUI {
 
     @FXML
     void backImportData(ActionEvent event) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
     }
 
     @FXML
@@ -1306,7 +1295,7 @@ public class ResidentUnitGUI {
     @FXML
     void showVehicles(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("showVehicle.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/showVehicle.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1338,14 +1327,12 @@ public class ResidentUnitGUI {
 
     @FXML
     void backShowVehicle(ActionEvent event) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuOpt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
+
         mainPanel.getChildren().clear();
         mainPanel.getChildren().add(menu);
-
-
     }
 
 //--------------------------------------------------------------------------------------------
@@ -1353,8 +1340,6 @@ public class ResidentUnitGUI {
     @FXML
     public void initialize() {
         new LocalDateThread(this).start();
-
-
     }
 
     @FXML
@@ -1380,9 +1365,9 @@ public class ResidentUnitGUI {
         telephoneUnit.setText("3015079361");
         parkingAvailable.setText("4");
         quantityApartments.setText("2");
-        quantityTowers.setText("2");
+        quantityTowers.setText("4");
         quantityFloorTowers.setText("2");
-        quantityApartmentsFloor.setText("1");
+        quantityApartmentsFloor.setText("2");
 
         residentialUnit.loadDataTestApartments();
 
@@ -1401,7 +1386,7 @@ public class ResidentUnitGUI {
     @FXML
     void registerResidentialUnitPortfolio(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerAdmin.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerAdmin.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1410,7 +1395,7 @@ public class ResidentUnitGUI {
 
     @FXML
     void backDataAdmin(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();
@@ -1421,7 +1406,7 @@ public class ResidentUnitGUI {
     @FXML
     void saveDataAdmin(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerData.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
         mainPanel.getChildren().clear();

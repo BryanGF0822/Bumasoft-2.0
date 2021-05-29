@@ -114,10 +114,7 @@ public class ResidentialUnit implements Serializable{
 		return null;
     }
      
-    public void createGraph(int[][] graph) {
-    	generalGraph.
-    	
-    }
+    
 
     public DefaultingAdministration getRootDefaultingAdministration() {
         return rootDefaultingAdministration;

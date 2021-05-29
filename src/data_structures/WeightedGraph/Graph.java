@@ -47,7 +47,7 @@ public class Graph<V> implements Serializable {
 
 		adjMatrix = newMatrix;
 
-		adjList.put(value.hashCode(), new Node<V>(value));
+		adjList.put(value.hashCode(), new Node<V>(value, type));
 
 		nV = nV + 1;
 

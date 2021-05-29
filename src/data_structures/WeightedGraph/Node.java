@@ -14,8 +14,24 @@ public class Node<V> implements Serializable {
     private boolean visited;
 
     private int indexMatrix;
+    
+    private String type;
 
-    public int getIndexMatrix() {
+    public String getType() {
+		return type;
+	}
+    //constructor
+    public Node(V value, String type) {
+        this.value = value;
+        edges = new ArrayList<Edge<V>>();
+       this.type = type;
+    }
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getIndexMatrix() {
         return indexMatrix;
     }
 
@@ -23,10 +39,7 @@ public class Node<V> implements Serializable {
         this.indexMatrix = indexMatrix;
     }
 
-    public Node(V value) {
-        this.value = value;
-        edges = new ArrayList<Edge<V>>();
-    }
+   
 
     public V getValue() {
         return value;

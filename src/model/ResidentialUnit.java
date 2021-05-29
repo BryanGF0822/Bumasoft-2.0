@@ -33,8 +33,9 @@ public class ResidentialUnit implements Serializable{
     private Employee root;
     static BufferedWriter bw;
     private DefaultingAdministration rootDefaultingAdministration;
-    public Graph<Tower> gt;
+    public Graph<Node<?>> generalGraph;
     public HashMap<String, Tower> auxTw;
+    public String[] list;
 
     public ResidentialUnit(String nameUnit, String nitUnit, String directionUnit, String telephoneUnit, int quantityApartments, int quantityTowers, int quantityFloorTowers, int quantityApartmentsFloor, int parkingAvailable) throws FileNotFoundException {
         this.nameUnit = nameUnit;
@@ -54,8 +55,9 @@ public class ResidentialUnit implements Serializable{
         firstResident = null;
         root = null;
         rootDefaultingAdministration = null;
-        gt = new Graph<Tower>();
+        generalGraph = new Graph<Node<?>>();
         auxTw = new HashMap<String, Tower>();
+        list = new String[14];
         
     }
     
@@ -67,19 +69,33 @@ public class ResidentialUnit implements Serializable{
             File archivo = new File(ruta);
             @SuppressWarnings("resource")
 			Scanner myReader = new Scanner(archivo);
-            String[] list = myReader.nextLine().split(";");
+           list = myReader.nextLine().split(";");
             int[][] myMatrix = new int[list.length-1][list.length-1];
             int row = 0;
             String[] info;
+            for (int i = 1; i < list.length - 1; i++) {
+            	Node<?> temp;
+                String towerIndex = "t" + (i -1);
+            	if(i == 1)
+            		// temp = new Node<Reception>(new Reception(), "RECEPTION");
+            	 if(i > 1 && i<6)
+    				 temp = new Node<Tower>(new Tower(towerIndex ), "TOWER");
+            	else {
+    				//temp = new Node<Parking>(new Parking(), "PARKING");
+			}
+            }
             while (myReader.hasNextLine()) {
                 dato = myReader.nextLine();
                 info = dato.split(";");
                 System.out.println("Tamaño info: " + info.length);
                 for (int i = 1; i < list.length; i++) {
                     myMatrix[row][i-1] = Integer.parseInt(info[i]);
-                    gt.addNode(null);
+                    
+                    
+                    
                     
                 }
+                
                 row++;               
             }
             
@@ -96,6 +112,11 @@ public class ResidentialUnit implements Serializable{
              System.out.println("El archivo no existe");
         }
 		return null;
+    }
+     
+    public void createGraph(int[][] graph) {
+    	generalGraph.
+    	
     }
 
     public DefaultingAdministration getRootDefaultingAdministration() {

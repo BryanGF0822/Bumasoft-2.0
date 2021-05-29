@@ -25,7 +25,7 @@ public class Graph<V> implements Serializable {
 
 		adjMatrix = new int[nV][nV];
 	}
-
+	//Lista de aristas
 	public Map<Integer, Node<V>> getNodes() {
 		return adjList;
 	}
@@ -34,7 +34,7 @@ public class Graph<V> implements Serializable {
 		this.adjList = nodes;
 	}
 
-	public void addNode(V value) {
+	public void addNode(V value, String type) {
 
 		int[][] newMatrix = new int[adjMatrix.length + 1][adjMatrix.length + 1];
 

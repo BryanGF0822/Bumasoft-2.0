@@ -65,12 +65,7 @@ public class ResidentUnitGUI {
     //se devuelve al menu principal
     @FXML
     void cancel(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
-        fxmlLoader.setController(this);
-        Parent menu = fxmlLoader.load();
-
-        mainPanel.getChildren().clear();
-        mainPanel.getChildren().add(menu);
+        menuBack();
     }
 
     //--Submenu Actualizar------------------------------------------------------------------------------------------
@@ -172,12 +167,7 @@ public class ResidentUnitGUI {
     //Boton Atras
     @FXML
     void exit(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/menuOpt.fxml"));
-        fxmlLoader.setController(this);
-        Parent menu = fxmlLoader.load();
-
-        mainPanel.getChildren().clear();
-        mainPanel.getChildren().add(menu);
+        menuBack();
     }
 
     //--Apartamentos------------------------------------------------------------------------------------------
@@ -267,19 +257,20 @@ public class ResidentUnitGUI {
     }
 
     //Boton guardar
+
+    // Se actualizo
     @FXML
     void saveAptDataRegister(ActionEvent event) throws IOException, RealStateRegistrationDuplicate {
         addApartments();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
-        fxmlLoader.setController(this);
-        Parent menu = fxmlLoader.load();
-
-        mainPanel.getChildren().clear();
-        mainPanel.getChildren().add(menu);
+        backMenuRegisterData();
     }
 
     @FXML
     void backRegisterAptData(ActionEvent event) throws IOException {
+        backMenuRegisterData();
+    }
+
+    public void backMenuRegisterData() throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
         fxmlLoader.setController(this);
         Parent menu = fxmlLoader.load();
@@ -343,12 +334,7 @@ public class ResidentUnitGUI {
     void saveRegisterDataOwner(ActionEvent event) throws IOException, TypeDocumentException {
 
         addOwners();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/registerData.fxml"));
-        fxmlLoader.setController(this);
-        Parent menu = fxmlLoader.load();
-
-        mainPanel.getChildren().clear();
-        mainPanel.getChildren().add(menu);
+        backMenuRegisterData();
 
     }
 

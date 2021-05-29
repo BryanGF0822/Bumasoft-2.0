@@ -411,8 +411,8 @@ public class ResidentialUnit implements Serializable{
         BufferedReader r = new BufferedReader(new FileReader(new File("data/dataToDemoApartments.csv")));
 
         r.readLine();
-
-        String[] temp;
+        String temp;
+        /*
         for (int i = 0; i < 2; i++) {
             temp = r.readLine().split(",");
 
@@ -420,7 +420,11 @@ public class ResidentialUnit implements Serializable{
                     Integer.parseInt(temp[5]), temp[6]);
             theApartments.add(tempApartment);
         }
-
+	*/
+        while ((temp = r.readLine()) != null) {
+			Tower tempTower = new Tower(temp);
+			//gt.addNode(tempTower);
+		}
         r.close();
 
     }

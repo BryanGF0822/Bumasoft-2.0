@@ -61,6 +61,8 @@ public class ResidentialUnit implements Serializable{
         
     }
     
+    
+    
     public int[][] leerArchivo(String ruta) {
 
      	String dato;
@@ -85,16 +87,19 @@ public class ResidentialUnit implements Serializable{
     				temp = new Node<Parking>(new Parking(parkingIndex), "PARKING");
 			}
             	 generalGraph.addNode(temp, temp.getType());
+            	 System.out.println(temp.getType());
             }
             while (myReader.hasNextLine()) {
                 dato = myReader.nextLine();
                 info = dato.split(";");
                 System.out.println("Tamaño info: " + info.length);
                 for (int i = 1; i < list.length; i++) {
+                	if(info[i].equals("0") ) {
+                		  myMatrix[row][i-1] = Integer.MAX_VALUE;
+                	}else {
                     myMatrix[row][i-1] = Integer.parseInt(info[i]);
-                    
-                    
-                    
+                	}
+                                   
                     
                 }
                 

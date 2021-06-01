@@ -72,11 +72,11 @@ public class ResidentialUnit implements Serializable{
             @SuppressWarnings("resource")
 			Scanner myReader = new Scanner(archivo);
            list = myReader.nextLine().split(";");
+           System.out.println("Tamaño List: " + list.length);
            ArrayList<Node<?>> nodesList = new ArrayList<Node<?>>();
             int[][] myMatrix = new int[list.length-1][list.length-1];
-            int row = 0;
             String[] info;
-            for (int i = 1; i < list.length - 1; i++) {
+            for (int i = 1; i < list.length; i++) {
             	Node<?> temp;
                 String towerIndex = "t" + (i -1);
                 String parkingIndex = "p" + (i -5);
@@ -91,7 +91,7 @@ public class ResidentialUnit implements Serializable{
             	 nodesList.add(temp);
             	 System.out.println(temp.getType());
             }
-            int filas = 0;
+            int row = 0;
             while (myReader.hasNextLine()) {
                 dato = myReader.nextLine();
                 info = dato.split(";");
@@ -99,13 +99,19 @@ public class ResidentialUnit implements Serializable{
                 for (int i = 1; i < list.length; i++) {
                 	if(info[i].equals("mv") ) {
                 		  myMatrix[row][i-1] = Integer.MAX_VALUE;
+                		  System.out.println("Row: " + row);
+                		  System.out.println("i: " + (i-1));
+                		  generalGraph.addConnection(nodesList.get(row).hashCode(), nodesList.get(i-1).hashCode(), Integer.MAX_VALUE);
+                		  
                 	}else {
                     myMatrix[row][i-1] = Integer.parseInt(info[i]);
+                    System.out.println("Row: " + row);
+          		  	System.out.println("i: " + (i-1));
+                    generalGraph.addConnection(nodesList.get(row).hashCode(), nodesList.get(i-1).hashCode(), Integer.parseInt(info[i]));
                 	}
                                    
                     
                 }
-                
                 row++;               
             }
             

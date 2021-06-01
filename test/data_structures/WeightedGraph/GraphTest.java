@@ -46,10 +46,10 @@ class GraphTest {
 	        setUp1();
 	        String expected = "bryanseanjhonaristipaola";
 	        String actual = "";
-	        List<Node<Owner>> temp = miGrafo.dfs(a.hashCode());
-	        for (Node<Owner> node: temp
+	        List<Node<?>> temp = miGrafo.dfs(a.hashCode());
+	        for (Node<?> node: temp
 	             ) {
-	            actual += node.getValue().getFullName();
+	            actual += node.getValue().toString();
 	        }
 	        assertEquals(expected, actual);
 	    }
@@ -59,10 +59,10 @@ class GraphTest {
 	        setUp1();
 	        String expected = "paolabryanseanjhonaristi";
 	        String actual = "";
-	        List<Node<Owner>> temp = miGrafo.dfs(b.hashCode());
-	        for (Node<Owner> node: temp
+	        List<Node<?>> temp = miGrafo.dfs(b.hashCode());
+	        for (Node<?> node: temp
 	        ) {
-	            actual += node.getValue().getFullName();
+	            actual += node.getValue().toString();
 	        }
 	        assertEquals(expected, actual);
 	    }
@@ -72,10 +72,10 @@ class GraphTest {
 	        setUp1();
 	        String expected = "jhonbryanseanpaolaaristi";
 	        String actual = "";
-	        List<Node<Owner>> temp = miGrafo.dfs(c.hashCode());
-	        for (Node<Owner> node: temp
+	        List<Node<?>> temp = miGrafo.dfs(c.hashCode());
+	        for (Node<?> node: temp
 	        ) {
-	            actual += node.getValue().getFullName();
+	            actual += node.getValue().toString();
 	        }
 	        assertEquals(expected, actual);
 	    }
@@ -86,10 +86,10 @@ class GraphTest {
 	        setUp1();
 	        String expected = "bryanpaolaseanjhonaristi";
 	        String actual = "";
-	        List<Owner> temp = miGrafo.bfs(a.hashCode());
-	        for (Owner node: temp
+	        List<Node<?>> temp = miGrafo.bfs(a.hashCode());
+	        for (Node<?> node: temp
 	        ) {
-	            actual += node.getFullName();
+	            actual += node.getValue().toString();
 	        }
 	        assertEquals(expected, actual);
 	    }
@@ -99,10 +99,10 @@ class GraphTest {
 	        setUp1();
 	        String expected = "paolabryanseanjhonaristi";
 	        String actual = "";
-	        List<Owner> temp = miGrafo.bfs(b.hashCode());
-	        for (Owner node: temp
+	        List<Node<?>> temp = miGrafo.bfs(b.hashCode());
+	        for (Node<?> node: temp
 	        ) {
-	            actual += node.getFullName();
+	            actual += node.getValue().toString();
 	        }
 	        assertEquals(expected, actual);
 	    }
@@ -112,10 +112,10 @@ class GraphTest {
 	        setUp1();
 	        String expected = "aristijhonbryanpaolasean";
 	        String actual = "";
-	        List<Owner> temp = miGrafo.bfs(e.hashCode());
-	        for (Owner node: temp
+	        List<Node<?>> temp = miGrafo.bfs(e.hashCode());
+	        for (Node<?> node: temp
 	        ) {
-	            actual += node.getFullName();
+	            actual += node.getValue().toString();
 	        }
 	        assertEquals(expected, actual);
 	    }

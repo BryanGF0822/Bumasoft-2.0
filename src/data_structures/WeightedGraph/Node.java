@@ -9,7 +9,7 @@ public class Node<V> implements Serializable {
 
     private V value;
 
-    private List<Edge<V>> edges;
+    private List<Edge<?>> edges;
 
     private boolean visited;
 
@@ -23,7 +23,7 @@ public class Node<V> implements Serializable {
     //constructor
     public Node(V value, String type) {
         this.value = value;
-        edges = new ArrayList<Edge<V>>();
+        edges = new ArrayList<Edge<?>>();
        this.type = type;
     }
 
@@ -49,11 +49,11 @@ public class Node<V> implements Serializable {
         this.value = value;
     }
 
-    public List<Edge<V>> getEdges() {
+    public List<Edge<?>> getEdges() {
         return edges;
     }
 
-    public void setEdges(List<Edge<V>> edges) {
+    public void setEdges(List<Edge<?>> edges) {
         this.edges = edges;
     }
 
@@ -61,9 +61,9 @@ public class Node<V> implements Serializable {
         return edges.add(edge);
     }
 
-    public List<Node<V>> dfs() {
+    public List<Node<?>> dfs() {
 
-        List<Node<V>> aN = new ArrayList<Node<V>>();
+        List<Node<?>> aN = new ArrayList<Node<?>>();
         visited = true;
 
         aN.add(this);
@@ -80,9 +80,9 @@ public class Node<V> implements Serializable {
 
     }
 
-    public List<Node<V>> bfs() {
+    public List<Node<?>> bfs() {
 
-        List<Node<V>> aN = new ArrayList<Node<V>>();
+        List<Node<?>> aN = new ArrayList<Node<?>>();
         visited = true;
 
         for (int i = 0; i < edges.size(); i++) {
@@ -98,9 +98,9 @@ public class Node<V> implements Serializable {
 
     }
 
-    public List<Node<V>> getAdjNodes() {
+    public List<Node<?>> getAdjNodes() {
 
-        List<Node<V>> aN = new ArrayList<Node<V>>();
+        List<Node<?>> aN = new ArrayList<Node<?>>();
 
         for (int i = 0; i < edges.size(); i++) {
 

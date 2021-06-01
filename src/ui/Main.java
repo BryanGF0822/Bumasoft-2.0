@@ -44,6 +44,7 @@ public class  Main extends Application{
         progressBars = new ProgressBar();
         progressBars.setPrefWidth(200);
         anchorToTheBar.getChildren().add(progressBars);
+        residentialUnit.leerArchivo("data/towers.csv");
 
 
     }

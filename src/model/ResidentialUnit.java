@@ -72,6 +72,7 @@ public class ResidentialUnit implements Serializable{
             @SuppressWarnings("resource")
 			Scanner myReader = new Scanner(archivo);
            list = myReader.nextLine().split(";");
+           ArrayList<Node<?>> nodesList = new ArrayList<Node<?>>();
             int[][] myMatrix = new int[list.length-1][list.length-1];
             int row = 0;
             String[] info;
@@ -87,14 +88,16 @@ public class ResidentialUnit implements Serializable{
     				temp = new Node<Parking>(new Parking(parkingIndex), "PARKING");
 			}
             	 generalGraph.addNode(temp, temp.getType());
+            	 nodesList.add(temp);
             	 System.out.println(temp.getType());
             }
+            int filas = 0;
             while (myReader.hasNextLine()) {
                 dato = myReader.nextLine();
                 info = dato.split(";");
                 System.out.println("Tamaño info: " + info.length);
                 for (int i = 1; i < list.length; i++) {
-                	if(info[i].equals("0") ) {
+                	if(info[i].equals("mv") ) {
                 		  myMatrix[row][i-1] = Integer.MAX_VALUE;
                 	}else {
                     myMatrix[row][i-1] = Integer.parseInt(info[i]);

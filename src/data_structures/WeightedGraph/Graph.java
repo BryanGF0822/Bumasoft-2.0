@@ -64,35 +64,35 @@ public class Graph<V> implements Serializable {
 
 	}
 
-	public List<V> bfs(int hashCodeSource) {
+	public List<Node<?>> bfs(int hashCodeSource) {
 
-		List<Node<V>> list = adjList.get(hashCodeSource).bfs();
+		List<Node<?>> list = adjList.get(hashCodeSource).bfs();
 		Collections.reverse(list);
-		List<V> temp = new ArrayList<V>();
+		List<Node<?>> temp = new ArrayList<Node<?>>();
 		for (int i = 0; i < list.size(); i++) {
-			temp.add(list.get(i).getValue());
+			temp.add(list.get(i));
 		}
 
 		return temp;
 
 	}
 
-	public List<Node<V>> dfs(int source) {
+	public List<Node<?>> dfs(int source) {
 
-		List<Node<V>> list = adjList.get(source).dfs();
+		List<Node<?>> list = adjList.get(source).dfs();
 
 		return list;
 
 	}
 
-	public List<V> getAdjNodes(int source) {
+	public List<Node<?>> getAdjNodes(int source) {
 
-		List<Node<V>> list = adjList.get(source).getAdjNodes();
+		List<Node<?>> list = adjList.get(source).getAdjNodes();
 
-		List<V> temp = new ArrayList<V>();
+		List<Node<?>> temp = new ArrayList<Node<?>>();
 
 		for (int i = 0; i < list.size(); i++) {
-			temp.add(list.get(i).getValue());
+			temp.add(list.get(i));
 		}
 		return temp;
 

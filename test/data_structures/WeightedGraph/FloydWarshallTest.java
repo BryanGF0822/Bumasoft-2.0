@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-//Algoritmo para encontrar el camino minimoen grafos ponderados.
+//Algoritmo para encontrar el camino minimo en grafos ponderados.
 class FloydWarshallTest {
 
 	private static FloydWarshall myFlow = new FloydWarshall();

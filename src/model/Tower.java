@@ -31,6 +31,11 @@ public class Tower implements Serializable {
 	public void setApartmets(List<Apartments> apartmets) {
 		this.pisos = pisos;
 	}
+
+	@Override
+	public String toString() {
+		return "" + name;
+	}
 	
 	
 }

@@ -15,7 +15,8 @@ import java.util.Scanner;
 import data_structures.WeightedGraph.*;
 
 public class ResidentialUnit implements Serializable{
-    private String nameUnit;
+	private static final long serialVersionUID = 1L;
+	private String nameUnit;
     private String nitUnit;
     private String directionUnit;
     private String telephoneUnit;
@@ -153,7 +154,6 @@ public class ResidentialUnit implements Serializable{
 
     @SuppressWarnings("unchecked")
     public void loadDataApartments() throws Exception {
-    	System.out.println("HAHAHAHAHAHAHAHHA");
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/dats/apartments.dat"));
         ArrayList<Apartments> temp;
 

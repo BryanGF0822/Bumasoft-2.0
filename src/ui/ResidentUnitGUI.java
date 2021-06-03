@@ -18,7 +18,6 @@ import thread.LocalDateThread;
 import java.io.*;
 import java.time.LocalDateTime;
 
-@SuppressWarnings("restriction")
 public class ResidentUnitGUI {
 
     static BufferedWriter bw;
@@ -1409,8 +1408,46 @@ public class ResidentUnitGUI {
 
     }
 
+  //--find shortest path window  ------------------------------------------------------------------------------------------
+    
+    @FXML
+    private TextArea shortPath;
+
+    @FXML
+    private ComboBox<String> nodesCB;
+    
+    @FXML
+    void findRute(ActionEvent event) {
+    	try {
+        	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/findShortestPath.fxml"));
+            fxmlLoader.setController(this);
+            Parent menu = fxmlLoader.load();
+            mainPanel.getChildren().clear();
+            mainPanel.getChildren().add(menu);
+            loadNodeCB();
+            
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
 
 
+    }
+    
+    private void loadNodeCB() {
+    	nodesCB.getItems().addAll("Porteria",
+    			"t1","t2","t3","t4",
+    			"parking1","parking2","parking3","parking4","parking5","parking6","parking7","parking8");
+    	
+    }
+    
+    @FXML
+    void generateRute(ActionEvent event) {
+
+    }
+    
+    
+    
 }
 
 

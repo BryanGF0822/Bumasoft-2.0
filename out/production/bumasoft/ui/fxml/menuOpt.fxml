@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
          <fill>
@@ -67,5 +67,6 @@
       <Hyperlink layoutX="72.0" layoutY="215.0" onAction="#chekParkingSpace" text="Consultar parqueaderos" />
       <Hyperlink layoutX="67.0" layoutY="238.0" onAction="#entryAndExitOfVehicles" text="Entrada y salida de vehiculos" />
       <Hyperlink layoutX="72.0" layoutY="261.0" onAction="#showVehicles" text="vehiculos registrados" />
+      <Hyperlink layoutX="72.0" layoutY="284.0" onAction="#findRute" text="Encontrar ruta" />
    </children>
 </Pane>

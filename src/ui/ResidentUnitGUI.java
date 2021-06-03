@@ -17,6 +17,11 @@ import thread.LocalDateThread;
 
 import java.io.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import data_structures.WeightedGraph.Node;
 
 public class ResidentUnitGUI {
 
@@ -1437,16 +1442,54 @@ public class ResidentUnitGUI {
     private void loadNodeCB() {
     	nodesCB.getItems().addAll("Porteria",
     			"t1","t2","t3","t4",
-    			"parking1","parking2","parking3","parking4","parking5","parking6","parking7","parking8");
+    			"p1","p2","p3","p4","p5","p6","p7","p8");
     	
     }
     
     @FXML
     void generateRute(ActionEvent event) {
-
+    	String destination = "";
+    	
+    	if (nodesCB.getValue().equals("Porteria")) {
+			destination = "Reception";
+		
+    	}else {
+			destination = nodesCB.getValue();
+			
+		}
+    	
+    	 Map<Integer, Node<Node<?>>> nodesMap = residentialUnit.generalGraph.getNodes();
+    	
+    	 int nodeOriginHashCode = 0;
+    	 int nodeDestinationHashCode = 0;
+    
+    	for (Integer hashCode : nodesMap.keySet()) {
+    		Node<?> node = nodesMap.get(hashCode);
+    		
+    		if (node.toString().equals("Reception")) {
+				nodeOriginHashCode = hashCode();
+			}
+    		
+    		if (node.toString().equals(destination)) {
+    			nodeDestinationHashCode = hashCode();
+    			
+    		}
+    		
+		}
+    
+    	
+    	List<Node<?>> temp = residentialUnit.generalGraph.dijkstraForAdjaMatrix(nodeOriginHashCode,nodeDestinationHashCode);
+    	
+    	String shortestPath = "";
+    	
+    	for (Node<?> node : temp) {
+    		shortestPath = node.getValue().toString();
+    		
+		}
+    	
+    	shortPath.setText(shortestPath);
+    
     }
-    
-    
     
 }
 

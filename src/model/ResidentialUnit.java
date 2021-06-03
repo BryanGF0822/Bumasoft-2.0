@@ -92,12 +92,19 @@ public class ResidentialUnit implements Serializable{
             	 nodesList.add(temp);
             	 System.out.println(temp.getType());
             }
+            
+            generalGraph.setNodeList(nodesList);
+            
             int row = 0;
             while (myReader.hasNextLine()) {
                 dato = myReader.nextLine();
                 info = dato.split(";");
                 System.out.println("Tamaño info: " + info.length);
                 for (int i = 1; i < list.length; i++) {
+                	/*if (!info[i].equals("mv") && !info[i].equals("0")) {
+                		myMatrix[row][i-1] = Integer.parseInt(info[i]);
+                		generalGraph.addConnection(nodesList.get(row).hashCode(), nodesList.get(i-1).hashCode(), Integer.parseInt(info[i]));
+					}*/
                 	if(info[i].equals("mv") ) {
                 		  myMatrix[row][i-1] = Integer.MAX_VALUE;
                 		  System.out.println("Row: " + row);

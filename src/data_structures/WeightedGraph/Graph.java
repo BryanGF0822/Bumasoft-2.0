@@ -13,6 +13,7 @@ public class Graph<V> implements Serializable {
 
 	private Map<Integer, Node<V>> adjList;
 	private int nV;
+	private ArrayList<Node<?>> nodesList;
 
 	private int numEdges;
 	public int[][] adjMatrix;
@@ -24,7 +25,19 @@ public class Graph<V> implements Serializable {
 		nV = 0;
 
 		adjMatrix = new int[nV][nV];
+		
+		nodesList = new ArrayList<Node<?>>();
 	}
+	
+	public ArrayList<Node<?>> getNodesList() {
+		return nodesList;
+	}
+	
+	public void setNodeList(ArrayList<Node<?>> nodesList) {
+		this.nodesList = nodesList;
+	}
+
+	
 	//Lista de aristas
 	public Map<Integer, Node<V>> getNodes() {
 		return adjList;
@@ -78,7 +91,6 @@ public class Graph<V> implements Serializable {
 	}
 
 	public List<Node<?>> dfs(int source) {
-
 		List<Node<?>> list = adjList.get(source).dfs();
 
 		return list;
@@ -98,14 +110,14 @@ public class Graph<V> implements Serializable {
 
 	}
 
-	public List<V> dijkstraForAdjaMatrix(Integer hashCodeOrigin, Integer hashCodeDestination) {
+	public List<Node<?>> dijkstraForAdjaMatrix(Integer hashCodeOrigin, Integer hashCodeDestination) {
 		DijkstraAlgorithmForAdjacencyMatrix myDijkstra = new DijkstraAlgorithmForAdjacencyMatrix();
 		myDijkstra.dijkstra(adjMatrix, adjList.get(hashCodeOrigin).getIndexMatrix(),
 				adjList.get(hashCodeDestination).getIndexMatrix(), nV);
 		List<Integer> myIndex = myDijkstra.getShortesPath();
-		List<Node<V>> temp = new ArrayList<>();
+		List<Node<?>> temp = new ArrayList<>();
 		temp.addAll(adjList.values());
-		List<Node<V>> path = new ArrayList<>();
+		List<Node<?>> path = new ArrayList<>();
 		for (int i = 0; i < myIndex.size(); i++) {
 			for (int j = 0; j < temp.size(); j++) {
 				if (temp.get(j).getIndexMatrix() == myIndex.get(i)) {
@@ -114,10 +126,10 @@ public class Graph<V> implements Serializable {
 				}
 			}
 		}
-		List<V> valuesPath = new ArrayList<V>();
+		List<Node<?>> valuesPath = new ArrayList<Node<?>>();
 
 		for (int i = 0; i < path.size(); i++) {
-			valuesPath.add(path.get(i).getValue());
+			valuesPath.add(path.get(i));
 		}
 
 		return valuesPath;

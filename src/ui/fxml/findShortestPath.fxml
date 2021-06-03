@@ -82,7 +82,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <TextArea fx:id="shortPath" layoutX="34.0" layoutY="261.0" prefHeight="43.0" prefWidth="533.0" />
+      <TextArea fx:id="shortPath" editable="false" layoutX="34.0" layoutY="261.0" prefHeight="43.0" prefWidth="533.0" />
       <Label layoutX="215.0" layoutY="232.0" text="Mejor ruta desde portería: " underline="true">
          <font>
             <Font name="Roboto Medium" size="15.0" />

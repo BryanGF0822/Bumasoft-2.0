@@ -29,7 +29,7 @@
             </LinearGradient>
          </stroke>
       </Rectangle>
-      <Label layoutX="168.0" layoutY="32.0" prefHeight="32.0" prefWidth="264.0" text="Consultar Parqueadero" underline="true">
+      <Label layoutX="168.0" layoutY="61.0" prefHeight="32.0" prefWidth="264.0" text="Consultar Parqueadero" underline="true">
          <font>
             <Font name="Roboto Medium" size="25.0" />
          </font>
@@ -68,7 +68,7 @@
             <Font name="Roboto Medium" size="13.0" />
          </font>
       </Button>
-      <Label layoutX="32.0" layoutY="80.0" text="Cantidad de parqueaderos disponibles" underline="true">
+      <Label layoutX="63.0" layoutY="125.0" text="Cantidad de parqueaderos disponibles" underline="true">
          <font>
             <Font name="Roboto Medium" size="15.0" />
          </font>
@@ -81,7 +81,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <TextArea layoutX="35.0" layoutY="148.0" prefHeight="19.0" prefWidth="529.0" />
-      <TextArea layoutX="33.0" layoutY="200.0" prefHeight="43.0" prefWidth="533.0" />
+      <TextArea layoutX="121.0" layoutY="180.0" prefHeight="25.0" prefWidth="144.0" />
+      <TextArea layoutX="335.0" layoutY="179.0" prefHeight="25.0" prefWidth="144.0" />
    </children>
 </Pane>

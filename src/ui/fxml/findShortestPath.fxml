@@ -30,7 +30,7 @@
             </LinearGradient>
          </stroke>
       </Rectangle>
-      <Label layoutX="208.0" layoutY="38.0" prefHeight="36.0" prefWidth="184.0" text="Generar camino" underline="true">
+      <Label layoutX="208.0" layoutY="48.0" prefHeight="36.0" prefWidth="184.0" text="Generar camino" underline="true">
          <font>
             <Font name="Roboto Medium" size="25.0" />
          </font>
@@ -69,7 +69,7 @@
             <Font name="Roboto Medium" size="13.0" />
          </font>
       </Button>
-      <Label layoutX="82.0" layoutY="160.0" text="Ingresar el destino:" underline="true">
+      <Label layoutX="82.0" layoutY="160.0" text="Ingresar el destino:">
          <font>
             <Font name="Roboto Medium" size="15.0" />
          </font>
@@ -82,8 +82,8 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <TextArea fx:id="shortPath" editable="false" layoutX="34.0" layoutY="261.0" prefHeight="43.0" prefWidth="533.0" />
-      <Label layoutX="215.0" layoutY="232.0" text="Mejor ruta desde portería: " underline="true">
+      <TextArea fx:id="shortPath" editable="false" layoutX="152.0" layoutY="257.0" prefHeight="43.0" prefWidth="298.0" />
+      <Label layoutX="212.0" layoutY="231.0" text="Mejor ruta desde portería: ">
          <font>
             <Font name="Roboto Medium" size="15.0" />
          </font>

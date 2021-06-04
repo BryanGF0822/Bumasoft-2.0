@@ -76,7 +76,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="125.0" layoutY="218.0" text="Teléfono">
+      <Label layoutX="128.0" layoutY="218.0" text="Teléfono">
          <font>
             <Font name="Roboto Medium" size="13.0" />
          </font>
